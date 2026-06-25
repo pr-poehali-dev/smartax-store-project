@@ -47,9 +47,13 @@ const reviews = [
 ];
 
 const repairs = [
-  { title: 'Ремонт телефонов', desc: 'Замена экранов, аккумуляторов, разъёмов зарядки и стёкол. Любые модели.', icon: 'Smartphone', price: 'от 990 ₽' },
-  { title: 'Ремонт планшетов', desc: 'Восстановление дисплеев, тачскринов, портов и батарей iPad и Android.', icon: 'Tablet', price: 'от 1 490 ₽' },
-  { title: 'Ремонт ноутбуков', desc: 'Чистка от пыли, замена клавиатур, матриц, апгрейд SSD и памяти.', icon: 'Laptop', price: 'от 1 990 ₽' },
+  { title: 'Замена дисплеев', desc: 'Замена экранов на оригинальные и качественные аналоги.', icon: 'Monitor', price: 'от 990 ₽' },
+  { title: 'Замена аккумуляторов', desc: 'Быстрая замена батареи, восстановление автономности.', icon: 'BatteryCharging', price: 'от 790 ₽' },
+  { title: 'Замена разъёмов', desc: 'Замена разъёмов зарядки и наушников.', icon: 'Plug', price: 'от 690 ₽' },
+  { title: 'Сложные ремонты', desc: 'Компонентный ремонт плат, восстановление после воды и падений.', icon: 'Cpu', price: 'от 1 490 ₽' },
+  { title: 'Восстановление после влаги', desc: 'Профессиональная чистка и восстановление устройства.', icon: 'Droplets', price: 'от 1 290 ₽' },
+  { title: 'Замена камер', desc: 'Замена основной и фронтальной камеры.', icon: 'Camera', price: 'от 890 ₽' },
+  { title: 'Замена динамиков', desc: 'Замена слухового и полифонического динамиков, микрофона.', icon: 'Volume2', price: 'от 690 ₽' },
 ];
 
 const brands = ['iPhone', 'Samsung', 'Xiaomi', 'Honor', 'Huawei', 'Realme'];
@@ -68,9 +72,8 @@ const Index = () => {
       {/* Header */}
       <header className="fixed top-0 inset-x-0 z-50 glass">
         <div className="container flex items-center justify-between h-16">
-          <a href="#top" className="flex items-center gap-2 font-display font-extrabold text-lg tracking-tight">
-            <span className="grid place-items-center w-9 h-9 rounded-xl bg-primary text-primary-foreground">СА</span>
-            СмартАкс
+          <a href="#top" className="flex items-center gap-2">
+            <img src="https://cdn.poehali.dev/projects/84acb8b6-e1e7-47a1-9edc-8bb6b1789685/bucket/c1b5a4b1-1378-4a8f-a458-1a2795910a41.jpg" alt="СмартАкс" className="h-9 w-auto object-contain" />
           </a>
           <nav className="hidden md:flex items-center gap-7">
             <Nav href="#catalog">Каталог</Nav>
@@ -212,31 +215,37 @@ const Index = () => {
         <div className="container">
           <div className="flex items-center gap-3 mb-3">
             <Icon name="Wrench" size={28} className="text-primary" />
-            <h2 className="font-display font-extrabold text-3xl md:text-4xl">Ремонт техники</h2>
+            <h2 className="font-display font-extrabold text-3xl md:text-4xl">Ремонт телефонов</h2>
           </div>
-          <p className="text-muted-foreground mb-10">Чиним телефоны, планшеты и ноутбуки — диагностика бесплатно</p>
-          <div className="grid md:grid-cols-3 gap-5">
+          <p className="text-muted-foreground mb-2">Любой сложности — <span className="text-foreground font-semibold">быстро · качественно · с гарантией</span></p>
+          <p className="text-muted-foreground mb-10">Диагностика бесплатно. Большинство ремонтов от 30 минут.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {repairs.map((r, i) => (
-              <div key={r.title} className="group relative glass rounded-2xl p-7 overflow-hidden hover:border-primary/50 transition-all animate-fade-up" style={{ animationDelay: `${i * 0.05}s` }}>
+              <div key={r.title} className="group relative glass rounded-2xl p-6 overflow-hidden hover:border-primary/50 transition-all animate-fade-up" style={{ animationDelay: `${i * 0.05}s` }}>
                 <div className="absolute -right-10 -top-10 w-32 h-32 bg-primary/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="flex items-start justify-between">
-                  <div className="grid place-items-center w-14 h-14 rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <Icon name={r.icon} size={28} />
+                  <div className="grid place-items-center w-12 h-12 rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <Icon name={r.icon} size={24} />
                   </div>
-                  <span className="text-sm font-semibold px-3 py-1 rounded-full bg-primary/10 text-primary">{r.price}</span>
+                  <span className="text-xs font-semibold px-2 py-1 rounded-full bg-primary/10 text-primary">{r.price}</span>
                 </div>
-                <div className="font-display font-bold text-xl mt-5">{r.title}</div>
-                <p className="text-muted-foreground mt-2">{r.desc}</p>
-                <a href="#contacts"><Button variant="ghost" className="mt-4 px-0 text-primary hover:text-primary hover:bg-transparent">Сдать в ремонт <Icon name="ArrowRight" size={16} /></Button></a>
+                <div className="font-display font-bold text-base mt-4">{r.title}</div>
+                <p className="text-muted-foreground text-sm mt-1">{r.desc}</p>
               </div>
             ))}
           </div>
-          <div className="glass rounded-2xl p-6 mt-6 flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-3 text-muted-foreground">
-              <Icon name="ShieldCheck" size={22} className="text-primary" />
-              Гарантия на ремонт · Оригинальные комплектующие · Срочный ремонт при вас
+          <div className="glass rounded-2xl p-6 mt-6">
+            <div className="flex flex-wrap gap-6 justify-between items-center mb-5">
+              <div className="flex flex-wrap gap-5">
+                <div className="flex items-center gap-2 text-sm"><Icon name="ShieldCheck" size={18} className="text-primary" /><span><span className="font-semibold">Гарантия</span> на все виды работ и запчасти</span></div>
+                <div className="flex items-center gap-2 text-sm"><Icon name="Clock" size={18} className="text-primary" /><span><span className="font-semibold">Быстрые сроки</span> — большинство ремонтов от 30 минут</span></div>
+                <div className="flex items-center gap-2 text-sm"><Icon name="BadgeCheck" size={18} className="text-primary" /><span><span className="font-semibold">Качество</span> — только проверенные запчасти</span></div>
+              </div>
             </div>
-            <a href={`tel:${PHONE}`}><Button className="rounded-full font-semibold"><Icon name="Phone" size={18} /> Узнать стоимость</Button></a>
+            <div className="flex flex-wrap gap-3">
+              <a href="tel:+79262961346"><Button className="rounded-full font-semibold"><Icon name="Phone" size={18} /> Евгений: +7 (926) 296-13-46</Button></a>
+              <a href={`tel:${PHONE}`}><Button variant="outline" className="rounded-full font-semibold"><Icon name="Phone" size={18} /> Александр: {PHONE}</Button></a>
+            </div>
           </div>
         </div>
       </section>
