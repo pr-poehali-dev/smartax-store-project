@@ -286,7 +286,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <Icon name="Clock" size={22} className="text-primary mt-0.5" />
-                  <div><div className="font-semibold">Часы работы</div><div className="text-muted-foreground">Ежедневно 10:00 — 21:00</div></div>
+                  <div><div className="font-semibold">Часы работы</div><div className="text-muted-foreground">Ежедневно 10:00 — 22:00</div></div>
                 </div>
               </div>
               <div className="grid sm:grid-cols-2 gap-3 mt-8">
