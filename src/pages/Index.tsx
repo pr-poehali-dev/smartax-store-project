@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const HERO_IMG = 'https://cdn.poehali.dev/projects/84acb8b6-e1e7-47a1-9edc-8bb6b1789685/files/ac662926-82ee-4a53-8e0b-e01360c7d607.jpg';
 
-const PHONE = '+7 (495) 123-45-67';
+const PHONE = '+7 (925) 266-80-45';
 const ADDRESS = 'Москва, ул. Юных Ленинцев, 52, ТЦ «Высота»';
 
 const categories = [
@@ -292,7 +292,7 @@ const Index = () => {
               <div className="grid sm:grid-cols-2 gap-3 mt-8">
                 <a href="https://yandex.ru/maps/?text=Москва, улица Юных Ленинцев, 52" target="_blank" rel="noopener"><Button className="w-full rounded-full font-semibold"><Icon name="Navigation" size={18} /> Построить маршрут</Button></a>
                 <a href={`tel:${PHONE}`}><Button variant="secondary" className="w-full rounded-full font-semibold"><Icon name="Phone" size={18} /> Позвонить</Button></a>
-                <a href="https://wa.me/74951234567" target="_blank" rel="noopener"><Button variant="outline" className="w-full rounded-full font-semibold border-white/15"><Icon name="MessageCircle" size={18} /> WhatsApp</Button></a>
+                <a href="https://wa.me/79252668045" target="_blank" rel="noopener"><Button variant="outline" className="w-full rounded-full font-semibold border-white/15"><Icon name="MessageCircle" size={18} /> WhatsApp</Button></a>
                 <a href="https://t.me/smartax" target="_blank" rel="noopener"><Button variant="outline" className="w-full rounded-full font-semibold border-white/15"><Icon name="Send" size={18} /> Telegram</Button></a>
               </div>
             </div>
@@ -322,7 +322,7 @@ const Index = () => {
 
       {/* Floating chat buttons */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-        <a href="https://wa.me/74951234567" target="_blank" rel="noopener" aria-label="WhatsApp" className="grid place-items-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:scale-110 transition-transform">
+        <a href="https://wa.me/79252668045" target="_blank" rel="noopener" aria-label="WhatsApp" className="grid place-items-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:scale-110 transition-transform">
           <Icon name="MessageCircle" size={26} />
         </a>
         <a href="https://t.me/smartax" target="_blank" rel="noopener" aria-label="Telegram" className="grid place-items-center w-14 h-14 rounded-full bg-[#229ED9] text-white shadow-lg hover:scale-110 transition-transform">
